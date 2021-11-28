@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="home.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="sign-up-container">
+                <form>
+                    <h1>Create Account</h1>
+                    <div class="social-links">
+                        <div><a><i class="fa fa-facebook" aria-hidden="true"></i></a></div>
+                        <div><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></div>
+                        <div><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></div>
+                    </div>
+                    <span>or use your email for register</span>
+                    <input type="text" placeholder="Name">
+                    <input type="email" placeholder="email">
+                    <input type="password" placeholder="password">
+                    <button class="form-btn">Sign up</button>
+                </form>
+            </div>
+            <div class="sign-in-container">
+                <form>
+                    <h1>Sign in</h1>
+                    <div class="social-links">
+                        <div><a><i class="fa fa-facebook" aria-hidden="true"></i></a></div>
+                        <div><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></div>
+                        <div><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></div>
+                    </div>
+                    <span>or use your account</span>
+                    <input type="email" placeholder="email">
+                    <input type="password" placeholder="password">
+                    <button class="form-btn">Sign in</button>
+                </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay-left" id="left">
+                    <h1>welcome back</h1>
+                    <p>To keep connected with us please login.</p>
+                    <button id="signIn" class="overlay-btn">Sign in</button>
+                </div>
+                <div class="overlay-right"  id="right">
+                    <h1>Hello</h1>
+                    <p>Enter your personal details</p>
+                    <button id="signUp" class="overlay-btn">Sign up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const SignUpBtn = document.getElementById("signUp");
+        const SignInBtn = document.getElementById("signIn");
+        const container = document.querySelector(".container");
+
+        SignUpBtn.addEventListener("click" , ()=>{
+            container.classList.add("right-panel-active");
+            document.getElementById('left').style.left = "50%";
+            document.getElementById('left').style.opacity = "1";
+            document.getElementById('right').style.opacity = "0";
+
+        });
+
+        SignInBtn.addEventListener("click" , ()=>{
+            container.classList.remove("right-panel-active");
+            document.getElementById('right').style.right = "0";
+            document.getElementById('right').style.opacity = "1";
+            document.getElementById('left').style.opacity = "0";
+        });
+    </script>
+</body>
+</html>
